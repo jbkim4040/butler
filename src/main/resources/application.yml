@@ -1,1 +1,9 @@
-spring.application.name=butler
+spring:
+  application:
+    name: butler
+  datasource:
+    hikari:
+      driver-class-name: oracle.jdbc.OracleDriver
+      username: ADMIN
+      password: Test0123456789
+      connection-test-query: SELECT 1 FROM DUAL
