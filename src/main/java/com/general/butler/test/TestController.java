@@ -2,10 +2,7 @@ package com.general.butler.test;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * packageName    : com.general.butler.test
@@ -23,12 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 @RequiredArgsConstructor
 public class TestController {
-Z
-    private static TestService testService;
+
+    private final TestService testService;
 
     @PostMapping("/save")
-    public String saveTest(String param) {
-        log.info("param :: {}", param);
-        return "SUCCESS";
+    public String saveTest(@RequestBody Test test) {
+        log.info("test :: {}", test);
+
+        return testService.test(test);
     }
 }

@@ -1,9 +1,13 @@
 spring:
+#  profiles:
+#    active: s
   application:
     name: butler
   datasource:
-    hikari:
-      driver-class-name: oracle.jdbc.OracleDriver
-      username: ADMIN
-      password: Test0123456789
-      connection-test-query: SELECT 1 FROM DUAL
+#    hikari:
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: ADMIN
+    password: Test0123456789
+    connection-test-query: SELECT 1 FROM DUAL
+#    jdbc-url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=D://dev//Wallet_butlerDB
+    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=D://dev//Wallet_butlerDB
