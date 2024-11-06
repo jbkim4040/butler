@@ -3,13 +3,13 @@ spring:
 #    active: s
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+    show-sql: true
   application:
     name: butler
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
     username: ADMIN
     password: Test0123456789
-    connection-test-query: SELECT 1 FROM DUAL
 #    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=D://dev//Wallet_butlerDB
     url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=/home/ubuntu/butler/Wallet_butlerDB
