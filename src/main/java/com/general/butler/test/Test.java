@@ -14,8 +14,8 @@ import lombok.ToString;
 @NoArgsConstructor
 public class Test {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String testId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer testId;
     private String testMemo;
     private String tester;
 }
