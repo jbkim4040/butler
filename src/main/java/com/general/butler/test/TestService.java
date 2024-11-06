@@ -25,8 +25,8 @@ public class TestService {
         testRepository.save(test);
 
         Test result = testRepository.findById(test.getTestId()).get();
-        log.info("result :: ", result);
+        log.info("result :: " + result.toString());
 
-        return result.getTestId().isEmpty() ? "FAIL" : "SUCCESS";
+        return result.getTestId().equals(0) ? "FAIL" : "SUCCESS";
     }
 }

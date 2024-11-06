@@ -3,7 +3,7 @@ spring:
 #    active: s
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
   application:
     name: butler
   datasource:
