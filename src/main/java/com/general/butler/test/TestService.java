@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
  * packageName    : com.general.butler.test
  * fileName       : TestService
@@ -22,9 +24,7 @@ public class TestService {
 
     private final TestRepository testRepository;
     public String test(Test test) {
-        testRepository.save(test);
-
-        Test result = testRepository.findById(test.getTestId()).get();
+        Test result = testRepository.save(test);
         log.info("result :: " + result.toString());
 
         return result.getTestId().equals(0) ? "FAIL" : "SUCCESS";
