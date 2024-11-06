@@ -1,6 +1,9 @@
 spring:
 #  profiles:
 #    active: s
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
   application:
     name: butler
   datasource:
@@ -8,6 +11,6 @@ spring:
     username: ADMIN
     password: Test0123456789
     connection-test-query: SELECT 1 FROM DUAL
-#    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=D://dev//Wallet_butlerDB
+    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=D://dev//Wallet_butlerDB
 #    jdbc-url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=D://dev//Wallet_butlerDB
-    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=/home/ubuntu/butler/Wallet_butlerDB
+#    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=/home/ubuntu/butler/Wallet_butlerDB
