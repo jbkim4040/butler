@@ -29,4 +29,9 @@ public class TestService {
 
         return result.getTestId().equals(0) ? "FAIL" : "SUCCESS";
     }
+
+    public void scheduleTest() {
+        Test test = Test.builder().testMemo("test").tester("test").build();
+        testRepository.save(test);
+    }
 }

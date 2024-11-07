@@ -1,15 +1,54 @@
 spring:
-#  profiles:
-#    active: s
+  profiles:
+    group:
+      local: local,common
+      dev: dev,common
+      prod: prod,common
+    default: local,common
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: ADMIN
+    password: Test0123456789
+    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=D://dev//Wallet_butlerDB
+server:
+  port: 8080
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: ADMIN
+    password: Test0123456789
+    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=/home/ubuntu/butler/Wallet_butlerDB
+server:
+  port: 8080
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: ADMIN
+    password: Test0123456789
+    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=/home/ubuntu/butler/Wallet_butlerDB
+server:
+  port: 8081
+---
+spring:
+  config:
+    activate:
+      on-profile: common
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
   application:
     name: butler
-  datasource:
-    driver-class-name: oracle.jdbc.OracleDriver
-    username: ADMIN
-    password: Test0123456789
-#    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=D://dev//Wallet_butlerDB
-    url: jdbc:oracle:thin:@butlerdb_medium?TNS_ADMIN=/home/ubuntu/butler/Wallet_butlerDB
